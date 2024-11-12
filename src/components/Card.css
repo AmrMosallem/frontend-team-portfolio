@@ -1,0 +1,206 @@
+.card-container {
+  position: relative;
+  width: 150px;
+  border-radius: 8px;
+  transition: 0.35s ease-in-out;
+}
+.card {
+  font-family: "Nunito Sans", system-ui;
+  color: rgb(241, 244, 255);
+  background: rgb(14, 14, 32);
+  display: flex;
+  flex-direction: column;
+  min-height: 295px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: inherit;
+}
+/*  */
+.card-container:hover {
+  /* transform: scaleX(1.07); */
+  width: 250px;
+  filter: brightness(1.2);
+  /* -webkit-box-shadow: 0px 0px 17px 6px rgba(255, 255, 255, 0.9);
+  -moz-box-shadow: 0px 0px 17px 6px rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 17px 6px rgba(255, 255, 255, 0.9); */
+  
+}
+.card-info {
+  max-height: 0;
+}
+
+@keyframes expand {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+.card-container :hover > .card-info {
+  animation: expand 0.4s ease-in-out 0.25s forwards;
+}
+.card-container:hover .blurred{
+  padding: 4px;
+  border-radius: 12px;
+ filter: blur(3px);
+}
+.card img {
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+.card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+  position: relative;
+  text-align: center;
+  color: rgb(225, 233, 255);
+}
+.name {
+  font-size: 24px;
+  font-weight: 700;
+}
+.title {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+.card-info {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-buttons button {
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.linkedin {
+  background: rgb(0, 106, 255);
+  color: rgb(255, 255, 255);
+}
+.linkedin:hover {
+  background: rgb(0, 68, 194);
+}
+.github {
+  background: rgb(242, 242, 242);
+  color: black;
+}
+.github:hover {
+  background: rgb(213, 213, 213);
+}
+
+.card-body {
+  margin: 10px 0px;
+}
+.card-body div {
+  margin: 10px 0px;
+}
+.big-text {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.small-text {
+  font-size: 12px;
+  color: rgb(201, 205, 236);
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border {
+  --angle: 0deg;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff00e1,
+    #ffff00,
+    #ff00e1
+  );
+  padding: 1.5px;
+  border-radius: 9.5px;
+  z-index: -1;
+  animation: spin infinite 4s linear;
+  transition: 0.4s ease-in-out;
+}
+
+.blurred {
+  filter: blur(4px);
+  opacity: 1;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+@media (max-width: 549px) {
+  .card-container {
+    width: 100px;
+    margin: 0 20px;
+  }
+  .card {
+    min-height: 215px;
+  }
+  .card-container:hover {
+    width: 140px;
+  }
+  .card img {
+    min-height: 180px;
+  }
+  .card-info {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .card-buttons button {
+    padding: 5px;
+    font-size: 10px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .card-title {
+    padding: 10px 0px 20px 0px;
+    gap: 5px;
+  }
+  .title {
+    font-size: 12px;
+  }
+  .small-text {
+    font-size: 10px;
+  }
+  @keyframes expand {
+    from {
+      max-height: 0;
+    }
+    to {
+      max-height: 600px;
+    }
+  }
+}

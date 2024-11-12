@@ -1,0 +1,27 @@
+.header {
+  color: rgb(241, 244, 255);
+  background: rgb(9, 9, 24);
+  font-family: "Nunito Sans", system-ui;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-title img{
+  width: 40px;
+  border-radius: 10px;
+  filter: brightness(2.5);
+  mix-blend-mode: lighten;
+}
+.header-subtitle{
+  /* color: rgb(255, 220, 115); */
+}
