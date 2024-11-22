@@ -1,16 +1,9 @@
 import React from 'react'
 import './Card.css'
 
-
-
-
-
-
-
-
 export default function Card(props) {
     return (
-        <div className='card-container' onMouseEnter={props.toggleParentPadding} onMouseLeave={props.toggleParentPadding} >
+        <div className='card-container' >
             <div className="card">
                 <img src={`./src/assets/${props.image}`} alt="" />
                 <div className="card-info">

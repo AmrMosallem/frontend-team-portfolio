@@ -9,25 +9,27 @@ import teamData from './team-data'
 
 function App() {
 
-  let cards = (teamData.map((el) => <Card {...el} key={el.name} toggleParentPadding={togglePadding} />))
+  let cards = (teamData.map((el) => <Card {...el} key={el.name} />))
+  var media = window.matchMedia(`(min-width: ${cards.length * 185 + 100}px)`)
+  var [flag, setFlag] = React.useState();
+  media.addEventListener("change", () => {
+    if (media.matches) {
+      setFlag(true)
+    } else {
+      setFlag(false)
+    }
+  })
 
-  let [cardsContainer, setCardsContainer] = React.useState(cards)
-  const [classNames, setClassNames] = React.useState("cards-container")
-  function togglePadding() {
-    if (classNames === "cards-container") {
-      setClassNames("cards-container decrease-padding")
-    }
-    else {
-      setClassNames("cards-container")
-    }
-  }
-  var flag = window.matchMedia("(max-width: 549px)").matches;
   return (
     <>
       <Header />
-      <main><div className={classNames} >
-        {cards}
-      </div></main></>
+      <main>
+        {flag ? <div className="cards-container " > {cards}</div> : (
+          <>  <div className="cards-container" >{cards.slice(0, cards.length / 2)}</div>
+            <div className="cards-container" >{cards.slice(cards.length / 2)}</div>
+          </>
+        )}
+      </main></>
   )
 }
 
