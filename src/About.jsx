@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion";
 import React from "react";
 import { SectionTitle } from "./components/SharedComponents";
-import { moatasemShaped } from "./assets/images";
+import {amrShaped } from "./assets/images";
 
 
 const AboutSection = styled.section`
@@ -68,7 +68,7 @@ export default function About(props) {
                     flex: 3,
                 }}
             >
-                <img src={moatasemShaped} className={`section-img`} />
+                <img src={amrShaped} className={`section-img`} />
             </motion.div>
             <div className="main-text-section">
                 <SectionTitle size={"64px"}>About Us <span className="section-subtitle">Passion Meets Precision in Every Line of Code.</span></SectionTitle>

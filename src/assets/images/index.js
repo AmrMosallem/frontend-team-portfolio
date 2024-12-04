@@ -28,7 +28,7 @@ import nodejs from "./icons/nodejs.png";
 
 
 import team from "./team.png";
-import moatasemShaped from "./moatasem-shaped.png";
+import amrShaped from "./amr-shaped.png";
 
 export {
   // team images
@@ -69,5 +69,5 @@ export {
 export {
   // others
   team,
-  moatasemShaped,
+  amrShaped,
 };
