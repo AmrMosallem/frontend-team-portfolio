@@ -1,5 +1,5 @@
 {
-  "name": "1-digital-card-project",
+  "name": "frontend-team-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^11.0.2",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.460.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-loader-spinner": "^6.1.6",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
