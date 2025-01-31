@@ -131,40 +131,40 @@ export const technologiesData = [
   {
     title: "Frontend Frameworks & Libraries",
     technologies: [
-      { name: "React", image: react, description: "We use React to create efficient, scalable, and reusable components, ensuring seamless user experiences and maintainable codebases." },
-      { name: "Vue.js", image: vue, description: "Vue.js empowers our team to build dynamic, interactive applications with ease, thanks to its simplicity and flexibility." },
-      { name: "JQuery", image: jquery, description: "Our team leverages jQuery to streamline DOM manipulation and implement smooth animations for engaging interfaces." },
+      { name: "React", image: react, description: "We use React to create efficient, scalable, and reusable components, ensuring seamless user experiences and maintainable codebases.", glowingColor: "#61DAFB" },
+      { name: "Vue.js", image: vue, description: "Vue.js empowers our team to build dynamic, interactive applications with ease, thanks to its simplicity and flexibility.", glowingColor: "#42B883" },
+      { name: "JQuery", image: jquery, description: "Our team leverages jQuery to streamline DOM manipulation and implement smooth animations for engaging interfaces.", glowingColor: "#0769AD" },
     ],
   },
   {
     title: "Core Web Development Tools",
     technologies: [
-      { name: "HTML5", image: html5, description: "We craft well-structured, semantic web content using HTML5 as the foundation of our projects." },
-      { name: "CSS3", image: css3, description: "CSS3 enables us to design modern, responsive, and visually appealing interfaces tailored for diverse audiences." },
-      { name: "JavaScript", image: js, description: "JavaScript is our go-to tool for adding interactivity and dynamic functionality to the web experiences we create." },
+      { name: "HTML5", image: html5, description: "We craft well-structured, semantic web content using HTML5 as the foundation of our projects.", glowingColor: "#E34F26" },
+      { name: "CSS3", image: css3, description: "CSS3 enables us to design modern, responsive, and visually appealing interfaces tailored for diverse audiences.", glowingColor: "#1572B6" },
+      { name: "JavaScript", image: js, description: "JavaScript is our go-to tool for adding interactivity and dynamic functionality to the web experiences we create.", glowingColor: "#F7DF1E" },
     ],
   },
   {
     title: "CSS Frameworks & Preprocessors",
     technologies: [
-      { name: "Bootstrap", image: bootstrap, description: "Our team uses Bootstrap to rapidly develop responsive designs, ensuring consistent layouts across devices." },
-      { name: "Tailwind CSS", image: tailwind, description: "With Tailwind CSS, we build custom designs efficiently while maintaining a clean and manageable codebase." },
-
-      { name: "Sass", image: sass, description: "Sass allows us to write more organized and reusable styles, improving the maintainability of complex projects." },
+      { name: "Bootstrap", image: bootstrap, description: "Our team uses Bootstrap to rapidly develop responsive designs, ensuring consistent layouts across devices.", glowingColor: "#7952B3" },
+      { name: "Tailwind CSS", image: tailwind, description: "With Tailwind CSS, we build custom designs efficiently while maintaining a clean and manageable codebase.", glowingColor: "#38B2AC" },
+      { name: "Sass", image: sass, description: "Sass allows us to write more organized and reusable styles, improving the maintainability of complex projects.", glowingColor: "#CC6699" },
     ],
   },
   {
     title: "Version Control & Collaboration",
     technologies: [
-      { name: "Git", image: git, description: "We rely on Git for version control, ensuring every line of code is tracked and collaboration is seamless." },
-      { name: "GitHub", image: github, description: "GitHub is our team’s collaboration hub, where we manage projects, review code, and work efficiently together." },
+      { name: "Git", image: git, description: "We rely on Git for version control, ensuring every line of code is tracked and collaboration is seamless.", glowingColor: "#F05032" },
+      { name: "GitHub", image: github, description: "GitHub is our team’s collaboration hub, where we manage projects, review code, and work efficiently together.", glowingColor: "#181717" },
     ],
   },
   {
     title: "Additional Expertise",
     technologies: [
-      { name: "Firebase", image: firebase, description: "Our team integrates Firebase to implement robust backend services, real-time data syncing, and secure user authentication." },
-      { name: "Node.js", image: nodejs, description: "We use Node.js to build scalable server-side applications, extending our expertise beyond frontend development." },
+      { name: "Firebase", image: firebase, description: "Our team integrates Firebase to implement robust backend services, real-time data syncing, and secure user authentication.", glowingColor: "#FFCA28" },
+      { name: "Node.js", image: nodejs, description: "We use Node.js to build scalable server-side applications, extending our expertise beyond frontend development.", glowingColor: "#83CD29" },
     ],
   },
 ];
+

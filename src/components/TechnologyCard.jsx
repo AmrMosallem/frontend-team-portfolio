@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import GlowingBorder from "./GlowingBorder";
+const getGlowingAnimation = (color) => keyframes`
+    0% {
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0))drop-shadow(0 0 5px rgba(255, 255, 255, 0) )  drop-shadow(0 0 15px  rgba(255, 255, 255, 0));
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 5px ${color}) drop-shadow(0 0 15px ${color});
+    }
+`;
+
+
 const TechnologyCardContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -87,11 +97,11 @@ const Technology = styled.div`
         font-weight: 600;
     }   
     *{
-        transition:0.3s
+        transition:0.3s;
+        animation: ${(props) => getGlowingAnimation(props.glowingColor)} 2s infinite alternate ease-out;
+
     }
-    *:hover{
-        filter: drop-shadow(0  0 5px #ffffff);
-    }
+
     @media (max-width:650px) {  
         img{
             width: 40px;
@@ -107,8 +117,11 @@ export default function TechnologyCard(props) {
         <TechnologyCardContainer big={props.big} darkMode={props.darkMode}>
             <span className="title"> {props.title}</span>
             <div className="technologies">
-                {props.technologies.map(technology => (
-                    <Technology description={technology.description} ><img src={technology.image} />
+                {props.technologies.map((technology, index) => (
+                    <Technology
+                        glowingColor={technology.glowingColor}
+                        key={index}
+                        description={technology.description} ><img src={technology.image} />
                         <span>{technology.name}</span> </Technology>))}
             </div>
             <GlowingBorder firstColor={props.darkMode ? "#0000003c" : "#e7be81"} secondColor={props.darkMode ? "#6a300039" : "#fff2be"} />{/*  */}
