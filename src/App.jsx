@@ -81,6 +81,9 @@ function App() {
     window.onload = () => {
         setLoading(false);
     };
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     var x = window.matchMedia("(max-width: 650px)");
     setMobileScreen(x.matches);
     x.addEventListener("change", () => {
