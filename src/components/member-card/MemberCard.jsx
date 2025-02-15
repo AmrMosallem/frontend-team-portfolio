@@ -3,122 +3,7 @@ import React from 'react'
 import styled from 'styled-components';
 import GlowingBorder from './GlowingBorder';
 
-// export default function Card(props) {
-//     const cardRef = React.useRef(null);
 
-//     const [state, setState] = React.useState({
-//         style: { width: "220px" },
-//         name: props.firstName,
-//         infoShown: false
-//     })
-
-//     const [aboutStyles, setAboutStyles] = React.useState({
-//         maxWidth: "0",
-//         padding: "0"
-//     })
-
-//     function cardHover() {
-//         setState((prevState) => ({
-//             ...prevState,
-//             style: {
-//                 ...prevState.style,
-//                 width: prevState.infoShown ? prevState.style.width : "350px",
-//                 filter: "brightness(1.2)"
-//             },
-
-//         }))
-//         setTimeout(
-//             () => {
-//                 setState((prevState) => ({
-//                     ...prevState,
-//                 }))
-//             }, 300
-//         )
-//     }
-//     function cardMouseLeave(event) {
-//         setState((prevState) => ({
-//             ...prevState,
-//             style: {
-//                 ...prevState.style,
-//                 width: prevState.infoShown ? prevState.style.width : "220px",
-//                 filter: prevState.infoShown ? "brightness(1.2)" : "brightness(1)"
-//             }
-//         }))
-//     }
-
-//     function cardClick(event) {
-//         if (event.target.tagName === "BUTTON")
-//             return;
-//         if (!state.infoShown) {
-//             props.increaseWidth();
-//             // props.scrollToRight();
-//         }
-//         else {
-//             props.decreaseWidth();
-//         }
-//         setState((prevState) => ({
-//             ...prevState,
-//             name: prevState.infoShown ? props.firstName : props.firstName + " " + props.lastName,
-//             infoShown: !prevState.infoShown,
-//             style: {
-//                 ...prevState.style,
-//                 width: prevState.infoShown ? "350px" : "600px", filter: "brightness(1.2)"
-//             }
-//         }))
-//         setAboutStyles(() => {
-//             return state.infoShown ? {
-//                 maxWidth: "0",
-//                 padding: "0"
-//             } : {
-//                 maxWidth: "300px",
-//                 padding: "0 20px"
-//             }
-//         })
-//         if (cardRef.current) {
-//             setTimeout(() => {
-//                 cardRef.current.scrollIntoView({
-//                     behavior: 'smooth', // Adds smooth scrolling
-//                     block: 'center', // Ensures the component is centered in view
-//                 });
-//             }, 400)
-//         }
-//     }
-//     return (
-
-//         <div className='card-container' ref={cardRef} onMouseEnter={cardHover} onMouseLeave={cardMouseLeave} onClick={cardClick} style={state.style}>
-//             <div className="card"  >
-//                 <div className="card-overview">
-//                     <img src={`/images/${props.image}`} alt="" />
-
-//                     <div className="card-title">
-//                         <span className='name'>{state.name}</span>
-//                         <span className='title'>{props.title}</span>
-//                     </div>
-
-
-//                 </div>
-
-
-//                 <div className="card-body" style={aboutStyles}>
-//                     <div><p className="big-text">About</p>
-//                         <span className="small-text">{props.about}</span>
-//                         <span className="quote" >"{props.quote}"</span></div>
-
-
-//                     <div className="card-buttons">
-//                         <button className='linkedin'><i className="fa-brands fa-linkedin"></i> LinkedIn</button>
-//                         <button className='github'><i className="fa-brands fa-github"></i> GitHub</button>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="border">
-//                 <div className="border blurred">
-//                 </div>
-//             </div>
-//         </div>
-
-//     )
-// }
 const CardContainer = styled.div`
   position: relative;
   width: 220px;
@@ -263,12 +148,12 @@ const CardContainer = styled.div`
     `
 
 
-const Card = React.forwardRef((props, ref) => {
+const MemberCard = React.forwardRef(({firstName, lastName, title, image, about, quote, github, mobileScreen}, ref) => {
   const cardRef = ref;
 
   const [state, setState] = React.useState({
     style: { width: "220px", filter: "brightness(1)" }, // filter: "brightness(1)" },
-    name: props.firstName,
+    name: firstName,
     infoShown: false
   })
 
@@ -282,7 +167,7 @@ const Card = React.forwardRef((props, ref) => {
   })
 
   function cardHover() {
-    if (props.mobileScreen) {
+    if (mobileScreen) {
       setState((prevState) => ({
         ...prevState,
         style: {
@@ -317,10 +202,10 @@ const Card = React.forwardRef((props, ref) => {
   function cardClick(event) {
     if (event.target.tagName === "A")
       return;
-    if (props.mobileScreen) {
+    if (mobileScreen) {
       setState((prevState) => ({
         ...prevState,
-        name: prevState.infoShown ? props.firstName : props.firstName + " " + props.lastName,
+        name: prevState.infoShown ? firstName : firstName + " " + lastName,
         infoShown: !prevState.infoShown,
         style: {
           ...prevState.style,
@@ -351,7 +236,7 @@ const Card = React.forwardRef((props, ref) => {
 
     setState((prevState) => ({
       ...prevState,
-      name: prevState.infoShown ? props.firstName : props.firstName + " " + props.lastName,
+      name: prevState.infoShown ? firstName : firstName + " " + lastName,
       infoShown: !prevState.infoShown,
       style: {
         ...prevState.style,
@@ -380,22 +265,22 @@ const Card = React.forwardRef((props, ref) => {
     <CardContainer ref={cardRef} onMouseEnter={cardHover} onMouseLeave={cardMouseLeave} onClick={cardClick} style={state.style}>
       <div className="card"  >
         <div className="card-overview" style={overviewStyles}>
-          <img src={props.image} alt="" />
+          <img src={image} alt="" />
 
           <div className="card-title">
             <span className='name'>{state.name}</span>
-            <span className='title'>{props.title}</span>
+            <span className='title'>{title}</span>
           </div>
         </div>
         <div className="card-body" style={aboutStyles}>
           <div>
-            {props.mobileScreen && <h2 className="body-name">{props.firstName} {props.lastName}</h2>}
+            {mobileScreen && <h2 className="body-name">{firstName} {lastName}</h2>}
             <p className="big-text">About</p>
-            <span className="small-text">{props.about}</span>
-            <span className="quote" >"{props.quote}"</span></div>
+            <span className="small-text">{about}</span>
+            <span className="quote" >"{quote}"</span></div>
           <div className="card-buttons">
             <a className='linkedin'><i className="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a className='github' href={props.github}><i className="fa-brands fa-github"></i> GitHub</a>
+            <a className='github' href={github}><i className="fa-brands fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
@@ -405,4 +290,4 @@ const Card = React.forwardRef((props, ref) => {
   )
 })
 
-export default Card
+export default MemberCard

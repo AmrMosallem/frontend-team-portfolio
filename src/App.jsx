@@ -8,6 +8,7 @@ import Projects from './Projects'
 import Members from './Members'
 import Technologies from './Technologies'
 import Contact from './Contact'
+import { teamData } from './constants'
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -79,7 +80,7 @@ function App() {
 
   React.useEffect(() => {
     window.onload = () => {
-        setLoading(false);
+      setLoading(false);
     };
     setTimeout(() => {
       setLoading(false);
@@ -95,10 +96,15 @@ function App() {
       <GlobalStyle darkMode={darkMode} loaded={!loading} />
       <LoadingScreen show={loading} darkMode={darkMode} />  {/*  */}
       <Header setDarkMode={setDarkMode} darkMode={darkMode} mobileScreen={mobileScreen} />
-      <Home darkMode={darkMode} setLoading = {setLoading} />
+      <Home darkMode={darkMode} setLoading={setLoading} />
       <About />
       <Projects mobileScreen={mobileScreen} darkMode={darkMode} />
-      <Members mobileScreen={mobileScreen} />
+      <Members
+        title="Our Members"
+        subtitle="Meet the Minds Behind the Magic."
+        teamData={teamData}
+        quote={`"Together, we’re more than just developers—we’re creators, innovators, and problem-solvers. Each member brings unique strengths, but it’s our collaboration that drives success. Let’s make the impossible possible, one project at a time."`}
+        mobileScreen={mobileScreen} />
       <Technologies darkMode={darkMode} />
       <Contact darkMode={darkMode} />
     </>

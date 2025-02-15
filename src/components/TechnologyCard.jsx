@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import GlowingBorder from "./GlowingBorder";
+import GlowingBorder from "./member-card/GlowingBorder";
 const getGlowingAnimation = (color) => keyframes`
     0% {
         filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0))drop-shadow(0 0 5px rgba(255, 255, 255, 0) )  drop-shadow(0 0 15px  rgba(255, 255, 255, 0));

@@ -146,7 +146,6 @@ const ProjectsSliderContainer = styled.section`
       &.github-button{ background:rgb(0, 0, 0);
         &:hover{
                  background:rgb(40,40,40);
-
         }
       }
     }
@@ -190,7 +189,6 @@ const ProjectsSliderContainer = styled.section`
     }
   }
 }
-
 `
 
 export const ProjectsSlider = (props) => {

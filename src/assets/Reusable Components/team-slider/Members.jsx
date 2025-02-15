@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import MemberCard from './components/member-card/MemberCard'
+import MemberCard from './MemberCard'
 
 const SectionTitle = styled.h1`
 
@@ -81,7 +81,7 @@ const MembersSection = styled.section`
   }
 }
 `
-function Members({ title, subtitle, teamData, quote, mobileScreen }) {
+function Members({ title, subtitle, teamData, quote, mobileScreen, ...props }) {
 
   const scrollContainerRef = React.useRef(null);
   const cardRefs = React.useRef([]);
@@ -190,7 +190,7 @@ function Members({ title, subtitle, teamData, quote, mobileScreen }) {
 
 
   return (
-    <MembersSection id="members" >
+    <MembersSection id="members" {...props} >
       <SectionTitle center={true}>{title}<span className='section-subtitle'>{subtitle}</span></SectionTitle>
       <ScrollableContainer ref={scrollContainerRef}>
         <CardsContainer style={style}>
